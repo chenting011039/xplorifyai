@@ -1,0 +1,134 @@
+{
+  "en": {
+    "nav": {
+      "activities": "Common App Activity",
+      "programs": "Summer/Winter Program",
+      "contact": "Contact Us"
+    },
+    "banner": {
+      "title": "Discover Your Path, Empower Your Future",
+      "subtitle": "Explore activities that enhance your Common App and align seamlessly with your future aspirations."
+    },
+    "activities": {
+      "title": "Find Your Common App Activities",
+      "subtitle": "Get personalized extracurricular recommendations that align with your interests and academic goals",
+      "select": {
+        "hobby": "Select your hobby/interest",
+        "major": "Select your intended major"
+      },
+      "whatItIs": "What it is",
+      "whyItHelps": "Why it helps",
+      "resources": "Resources"
+    },
+    "programs": {
+      "title": "Discover Summer & Winter Programs",
+      "subtitle": "Find academic programs that boost your college application",
+      "season": "Select Season",
+      "duration": "Select Duration",
+      "viewDetails": "View Details",
+      "noPrograms": "No programs found for selected category",
+      "apply": "Apply",
+      "difficulty": {
+        "level1": "Entry Level",
+        "level2": "Beginner",
+        "level3": "Intermediate",
+        "level4": "Advanced",
+        "level5": "Expert"
+      },
+      "allDifficulties": "All Difficulty Levels"
+    },
+    "founders": {
+      "title": "Meet Our Founders",
+      "ceo": {
+        "title": "Co-Founder & CEO",
+        "bio": "Expert in education technology and college admissions."
+      },
+      "cto": {
+        "title": "Co-Founder & CTO",
+        "bio": "Specializes in AI and personalized learning systems."
+      }
+    },
+    "contact": {
+      "title": "Contact Us",
+      "subtitle": "We're here to help you succeed",
+      "form": {
+        "name": "Your Name",
+        "email": "Your Email",
+        "subject": "Select Subject",
+        "message": "Your Message",
+        "submit": "Send Message"
+      },
+      "info": {
+        "title": "Contact Information",
+        "hours": "Office Hours: Mon-Fri, 9AM-5PM EST",
+        "wechat": "WeChat: scan to connect"
+      }
+    }
+  },
+  "zh": {
+    "nav": {
+      "activities": "申请活动推荐",
+      "programs": "寒暑假项目",
+      "contact": "联系我们"
+    },
+    "banner": {
+      "title": "探索你的道路，成就你的未来",
+      "subtitle": "发现能提升你申请竞争力的活动，助力实现你的学术目标。"
+    },
+    "activities": {
+      "title": "寻找最适合你的大学申请活动",
+      "subtitle": "获取基于你的兴趣和学术目标的个性化课外活动推荐",
+      "select": {
+        "hobby": "选择你的兴趣爱好",
+        "major": "选择你的目标专业"
+      },
+      "whatItIs": "活动介绍",
+      "whyItHelps": "对申请的帮助",
+      "resources": "相关资源"
+    },
+    "programs": {
+      "title": "探索冬夏校项目",
+      "subtitle": "发现能提升你申请竞争力的学术项目",
+      "season": "选择季节",
+      "duration": "选择时长",
+      "viewDetails": "查看详情",
+      "noPrograms": "未找到相关项目",
+      "apply": "申请",
+      "difficulty": {
+        "level1": "入门级",
+        "level2": "初级",
+        "level3": "中级",
+        "level4": "高级",
+        "level5": "专家级"
+      },
+      "allDifficulties": "所有难度等级"
+    },
+    "founders": {
+      "title": "创始团队",
+      "ceo": {
+        "title": "联合创始人 & CEO",
+        "bio": "教育科技与大学申请专家"
+      },
+      "cto": {
+        "title": "联合创始人 & CTO",
+        "bio": "人工智能与个性化学习系统专家"
+      }
+    },
+    "contact": {
+      "title": "联系我们",
+      "subtitle": "我们随时为你提供帮助",
+      "form": {
+        "name": "你的姓名",
+        "email": "你的邮箱",
+        "subject": "选择主题",
+        "message": "你的留言",
+        "submit": "发送消息"
+      },
+      "info": {
+        "title": "联系方式",
+        "hours": "工作时间：周一至周五 9AM-5PM EST",
+        "wechat": "微信：扫码添加"
+      }
+    }
+  }
+} 

@@ -1,0 +1,740 @@
+/* General Styles */
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #2C3E50;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    background: linear-gradient(to right, #2C3E50, #3498DB) !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Section Styles */
+section {
+    padding: 2rem 0;
+}
+
+/* Form Styles */
+.form-control, .form-select {
+    border-radius: 0.25rem;
+    border: 1px solid #ced4da;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #3498DB;
+    box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+}
+
+/* Output Boxes */
+#recommendations-output, #programs-output {
+    background-color: #f8f9fa;
+    border-radius: 0.25rem;
+    min-height: 200px;
+}
+
+/* Founder Section */
+.founder-bio {
+    line-height: 1.6;
+}
+
+/* Contact Form */
+#contact-form {
+    background-color: #f8f9fa;
+    padding: 2rem;
+    border-radius: 0.25rem;
+}
+
+.contact-info {
+    padding: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1rem;
+    }
+}
+
+/* Logo styles */
+.logo {
+    height: 40px;
+    width: auto;
+}
+
+/* Navbar brand styling */
+.navbar-brand {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+    letter-spacing: -0.5px;
+}
+
+/* Add these banner styles to your existing CSS */
+.banner-container {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+}
+
+.banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(44, 62, 80, 0.7); /* Dark overlay with opacity */
+    display: flex;
+    align-items: center;
+}
+
+.banner-overlay h1 {
+    color: white;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.banner-text {
+    color: white;
+    font-size: 1.25rem;
+    max-width: 1000px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .banner-container {
+        height: 250px;
+    }
+    
+    .banner-overlay h1 {
+        font-size: 2rem;
+    }
+    
+    .banner-text {
+        font-size: 1rem;
+        max-width: 100%;
+        white-space: normal;
+    }
+}
+
+/* Add these styles for the resources section */
+.card-text h6 {
+    margin-bottom: 1rem;
+}
+
+.btn-outline-primary {
+    text-align: left;
+    padding: 0.375rem 0.75rem;
+    margin: 0.25rem 0;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    transform: translateX(5px);
+}
+
+.bi-link-45deg {
+    margin-right: 0.5rem;
+}
+
+/* Founder Cards Styling */
+.founder-card {
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    border-radius: 0.5rem;
+    height: 100%;
+    text-align: center;
+}
+
+.founder-card:hover {
+    box-shadow: none;
+}
+
+.founder-card img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+    display: block;
+    border: 3px solid #3498DB;
+}
+
+.founder-card h3 {
+    margin-bottom: 0.5rem;
+}
+
+.founder-card h6 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.founder-card .founder-bio {
+    text-align: left;
+}
+
+/* Add these navbar menu styles */
+.navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-weight: 500;
+    padding: 0.5rem 1rem !important;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: white !important;
+}
+
+/* Adjust spacing for mobile */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        margin-top: 1rem;
+    }
+    
+    .navbar-nav .nav-item {
+        text-align: center;
+        padding: 0.5rem 0;
+    }
+}
+
+/* Add smooth scrolling for the whole page */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Add return to top button styles */
+.return-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #3498DB;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: none; /* Hidden by default */
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.return-to-top-btn:hover {
+    background: #2980B9;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.return-to-top-btn.show {
+    display: flex;
+}
+
+/* Adjust for mobile */
+@media (max-width: 768px) {
+    .return-to-top-btn {
+        bottom: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+}
+
+/* Update language selector styles */
+.language-selector {
+    margin-left: 1rem;
+}
+
+.language-selector .btn-link {
+    text-decoration: none;
+    padding: 0.5rem;
+}
+
+.language-selector .dropdown-menu {
+    min-width: 100px;
+    margin-top: 0.5rem;
+}
+
+/* Adjust mobile view */
+@media (max-width: 991px) {
+    .language-selector {
+        margin-left: 0;
+        margin-top: 0.5rem;
+    }
+}
+
+/* Update WeChat QR code styles */
+.wechat-section {
+    text-align: left;
+}
+
+.wechat-qr {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    margin: 0.5rem 0;
+}
+
+/* Add these styles for the programs table */
+.table {
+    font-size: 0.95rem;
+}
+
+.table td {
+    vertical-align: middle;
+    padding: 1rem 0.75rem;
+}
+
+.table td div.text-wrap {
+    line-height: 1.4;
+    font-size: 0.9rem;
+}
+
+/* Style for difficulty stars */
+td:nth-child(3) {
+    font-size: 1rem;
+    color: #ffc107;
+    white-space: nowrap;
+}
+
+/* Improve mobile responsiveness */
+@media (max-width: 768px) {
+    .table td div.text-wrap {
+        max-width: 150px !important;
+    }
+}
+
+/* Add styles for the filters */
+.program-filters {
+    gap: 1rem;
+}
+
+#difficulty-select {
+    min-width: 180px;
+}
+
+/* Style for difficulty stars in select */
+#difficulty-select option {
+    font-size: 1rem;
+}
+
+/* Style for multiple select */
+select[multiple] {
+    padding: 0.5rem;
+}
+
+select[multiple] option {
+    padding: 0.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+select[multiple] option:last-child {
+    border-bottom: none;
+}
+
+/* Hold Ctrl/Cmd text */
+.select-help {
+    font-size: 0.8rem;
+    color: #6c757d;
+    margin-top: -0.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Dropdown filter styles */
+.dropdown-filter {
+    position: relative;
+    width: 100%;
+}
+
+.dropdown-filter button {
+    width: 100%;
+    text-align: left;
+    position: relative;
+    padding-right: 2rem;
+}
+
+.dropdown-filter .bi-chevron-down {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.dropdown-options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: white;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-top: 0.25rem;
+    transition: display 0.2s ease;
+}
+
+.options-container {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+/* Style for the multiple select inside dropdown */
+.dropdown-options select[multiple] {
+    border: none;
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    padding: 0;
+}
+
+.dropdown-options select[multiple] option {
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.dropdown-options select[multiple] option:last-child {
+    border-bottom: none;
+}
+
+.dropdown-options select[multiple] option:hover {
+    background-color: #f8f9fa;
+}
+
+/* Selected options counter */
+.selected-count {
+    background: #e9ecef;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+}
+
+/* Checkbox list styles */
+.checkbox-list {
+    padding: 0.5rem;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.checkbox-item:last-child {
+    border-bottom: none;
+}
+
+.checkbox-item:hover {
+    background-color: #f8f9fa;
+}
+
+.checkbox-item input[type="checkbox"] {
+    margin-right: 0.75rem;
+}
+
+.checkbox-item label {
+    margin-bottom: 0;
+    cursor: pointer;
+    flex-grow: 1;
+}
+
+/* Clear filters button */
+#clear-filters {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+#clear-filters i {
+    font-size: 1.1rem;
+}
+
+/* Update dropdown styles */
+.dropdown-options {
+    min-width: 250px;
+}
+
+/* Style for Select All options */
+.checkbox-item .select-all + label {
+    font-weight: 600;
+    color: #2C3E50;
+    border-bottom: 1px solid #dee2e6;
+    width: 100%;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.checkbox-item:first-child {
+    background-color: #f8f9fa;
+}
+
+/* Style for resources links */
+.card-text .d-flex.gap-2 {
+    margin-top: 0.5rem;
+}
+
+.card-text .btn-outline-primary {
+    white-space: nowrap;
+    margin-right: 0.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .card-text .d-flex.gap-2 {
+        flex-direction: column;
+    }
+    
+    .card-text .btn-outline-primary {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Programs page styles */
+.dropdown-filter {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.dropdown-options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    z-index: 1000;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.options-container {
+    padding: 10px;
+}
+
+.checkbox-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.checkbox-item input[type="checkbox"] {
+    margin: 0;
+}
+
+/* Quick Activity Finder Section */
+.bg-light-blue {
+    background-color: #e3f2fd;
+    transition: all 0.3s ease;
+}
+
+.quick-activity-finder {
+    border: 2px solid #90caf9;
+}
+
+.quick-activity-finder:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.quick-selector {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.quick-selector .form-select-lg {
+    margin-bottom: 1rem !important;
+    border-color: #90caf9;
+}
+
+.quick-selector .form-select-lg:focus {
+    border-color: #2196f3;
+    box-shadow: 0 0 0 0.25rem rgba(33, 150, 243, 0.25);
+}
+
+.quick-selector .btn-primary {
+    background-color: #2196f3;
+    border-color: #2196f3;
+    transition: all 0.3s ease;
+}
+
+.quick-selector .btn-primary:hover {
+    background-color: #1976d2;
+    border-color: #1976d2;
+    transform: translateY(-2px);
+}
+
+/* Activity Recommendations Styles */
+.recommendations-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.activity-item {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1rem;
+}
+
+.activity-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.activity-tags {
+    margin-top: 0.5rem;
+}
+
+.activity-tags .badge {
+    margin-right: 0.5rem;
+    font-weight: 500;
+}
+
+.card-header {
+    border-bottom: 2px solid rgba(0,0,0,0.125);
+}
+
+.card {
+    border: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Blue Color Scheme */
+.bg-blue {
+    background-color: #2196f3 !important;
+}
+
+.bg-blue-light {
+    background-color: #64b5f6 !important;
+}
+
+.bg-blue-dark {
+    background-color: #1976d2 !important;
+}
+
+.text-blue {
+    color: #2196f3 !important;
+}
+
+/* Update card styles for blue theme */
+.card-header.bg-blue,
+.card-header.bg-blue-dark {
+    border-bottom: none;
+}
+
+.activity-tags .badge {
+    font-size: 0.8rem;
+    padding: 0.4em 0.8em;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    padding: 4rem 0;
+    background-color: #f8f9fa;
+}
+
+.testimonial-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin: 0 1rem;
+}
+
+.testimonial-img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: block;
+    border: 3px solid #2196f3;
+}
+
+.testimonial-content {
+    padding: 1rem;
+}
+
+.testimonial-text {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #495057;
+    margin-bottom: 1.5rem;
+}
+
+.testimonial-name {
+    color: #2196f3;
+    margin-bottom: 0.25rem;
+}
+
+.testimonial-info {
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+/* Carousel Controls */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #2196f3;
+    border-radius: 50%;
+    padding: 1.5rem;
+}
+
+/* Auto-rotate animation */
+.carousel-inner {
+    transition: transform 0.6s ease-in-out;
+}
+
+@media (max-width: 768px) {
+    .testimonial-card {
+        padding: 1rem;
+        margin: 0;
+    }
+    
+    .testimonial-img {
+        width: 150px;
+        height: 150px;
+        margin-bottom: 1rem;
+    }
+} 
