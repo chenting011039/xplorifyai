@@ -1,0 +1,1 @@
+# explorify ai activities

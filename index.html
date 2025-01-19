@@ -1,0 +1,1586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oaks Valley Education - Common App Activity</title>
+    <style>
+        /* Base styles */
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+            margin: 0;
+            padding: 0;
+            padding-top: 100px; 
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation styles */
+        .nav-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #0052cc;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px 0; /* Increased padding */
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            color: white;
+            font-size: 1.5rem; /* Larger font size */
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-logo img {
+            height: 35px; /* Larger logo */
+            margin-right: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero section styles */
+        .hero-section {
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('resource/banner.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin-top: 2px; /* Add default margin */
+        }
+
+        .hero-content {
+            position: relative;
+            padding: 20px 40px;
+            background-color: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            border-radius: 8px;
+            line-height: 1.2;
+        }
+
+        .hero-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            line-height: 0.6;
+            margin-top: 5px;
+        }
+
+        /* Section header styles */
+        .section-header {
+            text-align: center;
+            padding: 40px 0 20px 0;
+            margin-top: 20px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .section-header .subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        .click-hint {
+            font-size: 1rem;
+            color: #666;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        
+        @media screen and (max-width: 1024px) {
+            .poster {
+                flex: 0 0 calc((100% - 20px) / 2);
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .poster {
+                flex: 0 0 100%;
+            }
+        }
+
+        .poster img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            padding: 20px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            overflow: auto;
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90vh;
+            object-fit: contain;
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+
+        .modal-close {
+            position: fixed;
+            right: 35px;
+            top: 15px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .modal-close:hover {
+            color: #bbb;
+        }
+
+        @keyframes zoom {
+            from {transform: scale(0)}
+            to {transform: scale(1)}
+        }
+
+        /* Testimonial section styles */
+        .testimonial-section {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+
+        .testimonial-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .testimonial-carousel {
+            position: relative;
+            overflow: hidden;
+            margin: 40px auto;
+            width: 100%;
+        }
+
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.3s ease;
+            width: 100%;
+        }
+
+        .testimonial-card {
+            flex: 0 0 100%;
+            width: 100%;
+            min-width: 100%;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        .testimonial-content {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .quote {
+            font-size: 1.1em;
+            color: #333;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .author {
+            color: #0052cc;
+            margin: 10px 0;
+        }
+
+        .school {
+            color: #666;
+        }
+
+        .testimonial-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background: #0052cc;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            z-index: 2;
+        }
+
+        .testimonial-button:hover {
+            background: #0066ff;
+        }
+
+        .testimonial-button.prev {
+            left: 10px;
+        }
+
+        .testimonial-button.next {
+            right: 10px;
+        }
+
+        .testimonial-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .testimonial-dot {
+            width: 10px;
+            height: 10px;
+            background: #ccc;
+            border-radius: 50%;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .testimonial-dot.active {
+            background: #0052cc;
+        }
+
+        @media (max-width: 768px) {
+            .testimonial-button {
+                width: 30px;
+                height: 30px;
+                font-size: 14px;
+            }
+            
+            .quote {
+                font-size: 1em;
+            }
+        }
+
+        /* Why Choose Us section styles */
+        .why-choose-us {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+            color: #333;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .feature-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .feature-item h3 {
+            margin: 15px 0;
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .feature-item p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* CTA section styles */
+        .cta-section {
+            background-color: #0052cc;
+            color: white;
+            padding: 2rem 2rem;
+            text-align: center;
+        }
+
+        .cta-button {
+            background-color: #00a3ff;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .contact-info p {
+            margin: 0.5rem 0;
+            font-size: 1.1rem;
+        }
+
+        .wechat-qr {
+            width: 150px;
+            height: 150px;
+            margin-top: 10px;
+            border-radius: 8px;
+        }
+
+        .copyright {
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: white;
+            opacity: 0.8;
+        }
+
+        .email-link {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .email-link:hover {
+            opacity: 0.8;
+        }
+
+        /* Research Fields Section */
+        .research-fields {
+            padding: 60px 20px;
+            background-color: #f8f9fa;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+            color: #333;
+        }
+
+        .fields-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        .field-category {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+
+        .field-category h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.3em;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .field-category ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .field-category li {
+            margin-bottom: 12px;
+            padding-left: 20px;
+            position: relative;
+            color: #555;
+            font-size: 0.95em;
+            line-height: 1.4;
+        }
+
+        .field-category li:before {
+            content: "•";
+            color: #3498db;
+            position: absolute;
+            left: 0;
+        }
+
+        @media (max-width: 992px) {
+            .fields-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .fields-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 2em;
+            }
+        }
+
+        /* Mentor Section Styles */
+        .mentors {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+            color: #333;
+        }
+
+        .mentor-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .mentor-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .mentor-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .mentor-image {
+            width: 120px;
+            height: 120px;
+            overflow: hidden;
+            border-radius: 50%;
+            margin: 20px auto;
+        }
+
+        .mentor-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .mentor-info {
+            padding: 10px 20px;
+        }
+
+        .mentor-info h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .mentor-title {
+            color: #666;
+            margin: 10px 0;
+            font-size: 1rem;
+        }
+
+        .mentor-specialties {
+            margin-top: 15px;
+        }
+
+        .mentor-specialties span {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        .mentor-specialties ul {
+            list-style: none;
+            padding: 0;
+            margin: 5px 0 0 0;
+        }
+
+        .mentor-specialties li {
+            display: inline-block;
+            background: #f0f0f0;
+            padding: 5px 10px;
+            border-radius: 15px;
+            margin: 3px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        @media (max-width: 1200px) {
+            .mentor-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .mentor-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mentor-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        .programs-table {
+            padding: 60px 0;
+            background-color: #fff;
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+            margin: 0 20px;
+        }
+
+        .program-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            max-width: 1200px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .program-table th,
+        .program-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .program-table th {
+            background-color: #0052cc;
+            color: white;
+        }
+
+        .program-table tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        @media (max-width: 768px) {
+            .program-table {
+                font-size: 14px;
+            }
+            
+            .program-table th,
+            .program-table td {
+                padding: 10px;
+            }
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            width: 50px;
+            height: 50px;
+            background-color: #0052cc;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 45px;
+            font-size: 24px;
+            cursor: pointer;
+            text-decoration: none;
+            opacity: 1;
+            transition: opacity 0.3s ease-in-out;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            display: block;
+        }
+
+        .back-to-top:hover {
+            background-color: #0066ff;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 40px;
+                height: 40px;
+                line-height: 35px;
+                font-size: 20px;
+            }
+        }
+
+        /* Update mobile-specific styles */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 140px; /* Keep existing padding */
+            }
+
+            .nav-container {
+                flex-direction: column;
+                padding: 15px;
+            }
+
+            .nav-logo {
+                margin-bottom: 10px;
+                font-size: 1.2rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .nav-links a {
+                font-size: 0.9rem;
+            }
+
+            .hero-section {
+                margin-top: 2px; /* Reduced margin */
+                padding-top: 10px; /* Reduced padding */
+                min-height: 50vh;
+                height: auto;
+            }
+
+            .hero-content {
+                padding: 30px 20px;
+                margin-top: 10px; /* Reduced margin */
+            }
+
+            .hero-content h1 {
+                font-size: 1.8rem;
+                margin-bottom: 20px;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+                line-height: 1.4;
+                margin: 10px 0;
+            }
+        }
+
+        /* Research fields adjustments */
+        @media (max-width: 768px) {
+            .fields-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 0 15px;
+            }
+
+            .field-category {
+                padding: 20px;
+            }
+
+            .field-category h3 {
+                font-size: 1.2em;
+            }
+        }
+
+        /* Programs table adjustments */
+        @media (max-width: 768px) {
+            .program-table {
+                font-size: 14px;
+            }
+            
+            .program-table th,
+            .program-table td {
+                padding: 8px;
+            }
+
+            .table-responsive {
+                margin: 0 10px;
+            }
+        }
+
+        /* Testimonial section adjustments */
+        @media (max-width: 768px) {
+            .testimonial-content {
+                padding: 20px;
+            }
+
+            .quote {
+                font-size: 0.9em;
+            }
+
+            .testimonial-button {
+                width: 30px;
+                height: 30px;
+                font-size: 14px;
+            }
+
+            .testimonial-card {
+                padding: 0 10px;
+            }
+        }
+
+        /* Mentor section adjustments */
+        @media (max-width: 768px) {
+            .mentor-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 0 15px;
+            }
+
+            .mentor-card {
+                padding: 15px;
+            }
+
+            .mentor-image {
+                width: 100px;
+                height: 100px;
+            }
+
+            .mentor-info h3 {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* CTA section adjustments */
+        @media (max-width: 768px) {
+            .cta-section {
+                padding: 1.5rem 1rem;
+            }
+
+            .cta-button {
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
+            }
+
+            .contact-info p {
+                font-size: 1rem;
+            }
+
+            .wechat-qr {
+                width: 120px;
+                height: 120px;
+            }
+        }
+
+        /* General container adjustments */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+                margin-bottom: 30px;
+            }
+
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body id="top">
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="resource/logo.jpg" alt="Xplorify AI Logo">
+                Xplorify AI 智选优途
+            </div>
+            <div class="nav-links">
+                <a href="#top">首页</a>
+                <a href="#programs">申请活动</a>
+                <a href="#contact">联系我们</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Common App升学活动研创计划</h1>
+            <p>构建一条"高个性化、强深度、广覆盖"的活动发展主线。</p>
+            <p>结合基础知识、科研实践、成果展示与社会影响力，精心打造多维度活动体验与成果。</p>
+            <p>提供涵盖个人项目、科研探索、公益实践等多类型活动的一站式综合解决方案。</p>
+            <p>全面凸显学生活动的深度、广度与独特优势，助力打造脱颖而出的大学申请材料。</p>
+        </div>
+    </section>
+
+    <section class="research-fields">
+        <h2 class="section-title">项目领域</h2>
+        
+        <div class="fields-container">
+            <!-- Biology & Medicine -->
+            <div class="field-category">
+                <h3>生物医学 Biology & Medicine</h3>
+                <ul>
+                    <li>神经退行性疾病的行为及病理机制探究</li>
+                    <li>多糖结合疫苗的制备和评价</li>
+                    <li>抗原检测试剂研发及心血管疾病检测应用</li>
+                    <li>抗肿瘤药物药效的多层次研究</li>
+                    <li>实体瘤的免疫治疗组合策略</li>
+                    <li>消化系统靶向药物治疗</li>
+                    <li>人工智能赋能新药研究及开发</li>
+                </ul>
+            </div>
+
+            <!-- Physics -->
+            <div class="field-category">
+                <h3>物理 Physics</h3>
+                <ul>
+                    <li>新能源电车电池-石墨烯锂电池材料研发</li>
+                    <li>新能源电车电池-磷酸铁锂电池制备</li>
+                    <li>基于Matlab的人体生理信号处理和疾病关联分析</li>
+                    <li>激光物理之激光雷达中的光学</li>
+                    <li>列车智能控制系统设计</li>
+                    <li>天体物理的宇宙学研究</li>
+                </ul>
+            </div>
+
+            <!-- Computer Science -->
+            <div class="field-category">
+                <h3>计算机科学 Computer Science</h3>
+                <ul>
+                    <li>AR/VR 3D虚拟动画模型应用</li>
+                    <li>AIGC下一代知识引擎的开发</li>
+                    <li>基于AI算法的自动驾驶应用研究</li>
+                    <li>数学建模及场景化实践</li>
+                    <li>人工智能神经网络模型的构建探究</li>
+                </ul>
+            </div>
+
+            <!-- Art -->
+            <div class="field-category">
+                <h3>艺术 Art</h3>
+                <ul>
+                    <li>数字艺术与新媒体创作</li>
+                    <li>艺术史与当代艺术研究</li>
+                    <li>视觉传达设计与品牌策划</li>
+                    <li>交互设计与用户体验</li>
+                    <li>艺术策展与展览管理</li>
+                    <li>跨媒介艺术实践</li>
+                </ul>
+            </div>
+
+            <!-- Startup -->
+            <div class="field-category">
+                <h3>创业 Startup</h3>
+                <ul>
+                    <li>商业模式创新与市场策略</li>
+                    <li>创业项目孵化与管理</li>
+                    <li>数字经济与电子商务</li>
+                    <li>社会企业与可持续发展</li>
+                    <li>创新创业生态系统研究</li>
+                    <li>科技创新与商业化应用</li>
+                </ul>
+            </div>
+
+            <!-- More to Come -->
+            <div class="field-category">
+                <h3>更多领域</h3>
+                <ul>
+                    <li>更多研究领域正在开发中...</li>
+                    <li>敬请期待</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+     <!-- 科研导师简介 Section -->
+     <section class="mentors">
+        <div class="container">
+            <h2 class="section-title">项目导师简介</h2>
+            
+            <div class="mentor-grid">
+                <!-- First Row -->
+                <!-- Mentor Card 1 -->
+                <div class="mentor-card">
+                    <div class="mentor-image">
+                        <img src="resource/mentor1.jpg" alt="Dr. Sarah Johnson">
+                    </div>
+                    <div class="mentor-info">
+                        <h3>Dr. Sarah Johnson</h3>
+                        <p class="mentor-title">哈佛大学生物医学博士</p>
+                        <div class="mentor-specialties">
+                            <span>研究方向：</span>
+                            <ul>
+                                <li>分子生物学</li>
+                                <li>癌症免疫治疗</li>
+                                <li>基因编辑技术</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mentor Card 2 -->
+                <div class="mentor-card">
+                    <div class="mentor-image">
+                        <img src="resource/mentor2.jpg" alt="Prof. Michael Chen">
+                    </div>
+                    <div class="mentor-info">
+                        <h3>Prof. Michael Chen</h3>
+                        <p class="mentor-title">麻省理工学院计算机科学博士</p>
+                        <div class="mentor-specialties">
+                            <span>研究方向：</span>
+                            <ul>
+                                <li>人工智能</li>
+                                <li>机器学习</li>
+                                <li>计算机视觉</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mentor Card 3 -->
+                <div class="mentor-card">
+                    <div class="mentor-image">
+                        <img src="resource/mentor3.jpg" alt="Dr. Emma Williams">
+                    </div>
+                    <div class="mentor-info">
+                        <h3>Dr. Emma Williams</h3>
+                        <p class="mentor-title">牛津大学化学博士</p>
+                        <div class="mentor-specialties">
+                            <span>研究方向：</span>
+                            <ul>
+                                <li>有机化学</li>
+                                <li>药物研发</li>
+                                <li>纳米材料</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mentor Card 4 -->
+                <div class="mentor-card">
+                    <div class="mentor-image">
+                        <img src="resource/mentor4.jpg" alt="Dr. Sarah Johnson">
+                    </div>
+                    <div class="mentor-info">
+                        <h3>Dr. Sarah Johnson</h3>
+                        <p class="mentor-title">哈佛大学生物医学博士</p>
+                        <div class="mentor-specialties">
+                            <span>研究方向：</span>
+                            <ul>
+                                <li>分子生物学</li>
+                                <li>癌症免疫治疗</li>
+                                <li>基因编辑技术</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Second Row -->
+                <!-- Copy of Mentor Card 1 -->
+                <div class="mentor-card">
+                    <div class="mentor-image">
+                        <img src="resource/mentor1.jpg" alt="Dr. Sarah Johnson">
+                    </div>
+                    <div class="mentor-info">
+                        <h3>Dr. Sarah Johnson</h3>
+                        <p class="mentor-title">哈佛大学生物医学博士</p>
+                        <div class="mentor-specialties">
+                            <span>研究方向：</span>
+                            <ul>
+                                <li>分子生物学</li>
+                                <li>癌症免疫治疗</li>
+                                <li>基因编辑技术</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Copy of Mentor Card 2 -->
+                <div class="mentor-card">
+                    <div class="mentor-image">
+                        <img src="resource/mentor2.jpg" alt="Prof. Michael Chen">
+                    </div>
+                    <div class="mentor-info">
+                        <h3>Prof. Michael Chen</h3>
+                        <p class="mentor-title">麻省理工学院计算机科学博士</p>
+                        <div class="mentor-specialties">
+                            <span>研究方向：</span>
+                            <ul>
+                                <li>人工智能</li>
+                                <li>机器学习</li>
+                                <li>计算机视觉</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Copy of Mentor Card 3 -->
+                <div class="mentor-card">
+                    <div class="mentor-image">
+                        <img src="resource/mentor3.jpg" alt="Dr. Emma Williams">
+                    </div>
+                    <div class="mentor-info">
+                        <h3>Dr. Emma Williams</h3>
+                        <p class="mentor-title">牛津大学化学博士</p>
+                        <div class="mentor-specialties">
+                            <span>研究方向：</span>
+                            <ul>
+                                <li>有机化学</li>
+                                <li>药物研发</li>
+                                <li>纳米材料</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Copy of Mentor Card 4 -->
+                <div class="mentor-card">
+                    <div class="mentor-image">
+                        <img src="resource/mentor4.jpg" alt="Dr. Sarah Johnson">
+                    </div>
+                    <div class="mentor-info">
+                        <h3>Dr. Sarah Johnson</h3>
+                        <p class="mentor-title">哈佛大学生物医学博士</p>
+                        <div class="mentor-specialties">
+                            <span>研究方向：</span>
+                            <ul>
+                                <li>分子生物学</li>
+                                <li>癌症免疫治疗</li>
+                                <li>基因编辑技术</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="programs-table" id="programs">
+        <div class="container">
+            <h2 class="section-title">正在开放报名的重点项目</h2>
+            <div class="table-responsive">
+                <table class="program-table">
+                    <thead>
+                        <tr>
+                            <th>项目名称<br>Program Name</th>
+                            <th>研究方向<br>Research Area</th>
+                            <th>项目时长<br>Duration</th>
+                            <th>项目特色<br>Features</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>基因测序在癌症医疗领域的应用<br>
+                                导师：Dr. Danlu Wu<br>
+                                (Tufts University 生物医学博士后)<br>
+                                <a href="resource/poster1.jpg" target="_blank" style="color: #3498db; text-decoration: underline; font-size: 0.9em;">点击查看海报 →</a></td>
+                            <td>• 分子生物学与基因测序<br>
+                                • 分子诊断技术<br>
+                                • Python数据分析<br>
+                                • AI科普应用开发</td>
+                            <td>• 总计50+1课时<br>
+                                • 8个Session<br>
+                                • 最长1年<br>
+                                • 每周2-3小时</td>
+                            <td>• 科研+NGO双落地<br>
+                                • 个性化项目内容<br>
+                                • 真实科研体验<br>
+                                • 小组规模≤5人<br>
+                                • 三大申请素材：<br>
+                                &nbsp;&nbsp;- 个人项目/网站<br>
+                                &nbsp;&nbsp;- 科研发表<br>
+                                &nbsp;&nbsp;- 创业/公益影响力</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>天体物理与计算机交叉学科项目<br>
+                                导师：Prof. Ji Wang<br>
+                                (Ohio State University 天体物理学教授)<br>
+                                <a href="resource/poster2.jpg" target="_blank" style="color: #3498db; text-decoration: underline; font-size: 0.9em;">点击查看海报 →</a></td>
+                            <td>• 天体物理学<br>
+                                • 计算机科学<br>
+                                • 数据可视化<br>
+                                • 科学传播与公益</td>
+                            <td>• 总计35课时<br>
+                                • 4个Session<br>
+                                • 为期1年<br>
+                                • 每周2-3小时</td>
+                            <td>• 跨学科创新项目<br>
+                                • 科研与公益结合<br>
+                                • 小组规模≤4人<br>
+                                • 多重师资配置：<br>
+                                &nbsp;&nbsp;- 专业领域导师<br>
+                                &nbsp;&nbsp;- 双领域助教<br>
+                                &nbsp;&nbsp;- 课程班主任<br>
+                                • 公益服务支持</td>
+                        </tr>
+                        
+                        <!-- Third Program (new) -->
+                        <tr>
+                            <td>硅谷创业营：AI产品从0到1<br>
+                                导师：Dr. Ting Chen<br>
+                                (佛罗里达大学人工智能博士)<br>
+                                <a href="resource/poster3.jpg" target="_blank" style="color: #3498db; text-decoration: underline; font-size: 0.9em;">点击查看海报 →</a></td>
+                            <td>• 商业模式与融资<br>
+                                • AI产品开发<br>
+                                • Fine-Tune模型开发<br>
+                                • Azure平台应用<br>
+                                • Prompt Engineering</td>
+                            <td>• 总计15+1课时<br>
+                                • 4个Session<br>
+                                • 为期3个月<br>
+                                • 每周2-3小时</td>
+                            <td>• 真实创业与研发体验<br>
+                                • 商业X产品X技术交叉<br>
+                                • 小组规模≤5人<br>
+                                • 项目亮点：<br>
+                                &nbsp;&nbsp;- MVP产品落地<br>
+                                &nbsp;&nbsp;- 商业计划书<br>
+                                &nbsp;&nbsp;- 技术开发实践</td>
+                        </tr>
+
+                        <!-- Fourth Program (new) -->
+                        <tr>
+                            <td>动漫书创作营<br>
+                                导师：冥冥 & 嘟噜<br>
+                                (小红书知名漫画创作者)<br>
+                                <a href="resource/poster4.jpg" target="_blank" style="color: #3498db; text-decoration: underline; font-size: 0.9em;">点击查看海报 →</a></td>
+                            <td>• 漫画创作与视觉叙事<br>
+                                • 角色与场景设计<br>
+                                • AI辅助故事创作<br>
+                                • 出版与展览策划<br>
+                                • 媒体宣传推广</td>
+                            <td>• 总计35课时<br>
+                                • 学期内每周1小时<br>
+                                • 暑期强化课程<br>
+                                • 每周约2小时</td>
+                            <td>• 全方位创作体验<br>
+                                • 专业导师指导<br>
+                                • 小组规模≤3人<br>
+                                • 项目亮点：<br>
+                                &nbsp;&nbsp;- 完整漫画作品<br>
+                                &nbsp;&nbsp;- 展览策划执行<br>
+                                &nbsp;&nbsp;- 出版推广机会</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonial-section">
+        <div class="testimonial-container">
+            <h2 class="section-title">学生成功案例</h2>
+            <div class="testimonial-carousel">
+                <button class="testimonial-button prev">❮</button>
+                <button class="testimonial-button next">❯</button>
+                
+                <div class="testimonial-track">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p class="quote">"通过橡谷教育的科研项目，我成功发表了我的第一篇论文，并被斯坦福大学录取。"</p>
+                            <p class="author"><strong>- 陈明慧, 2023届</strong></p>
+                            <p class="school">录取院校：斯坦福大学</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p class="quote">"导师的一对一指导让我深入理解了研究方法，这对我的大学申请帮助很大。"</p>
+                            <p class="author"><strong>- 李阳, 2023届</strong></p>
+                            <p class="school">录取院校：麻省理工学院</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p class="quote">"科研经历让我在申请中脱颖而出，成功获得了常春藤名校的录取。"</p>
+                            <p class="author"><strong>- 王佳怡, 2023届</strong></p>
+                            <p class="school">录取院校：宾夕法尼亚大学</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-dots">
+                    <span class="testimonial-dot active" data-index="0"></span>
+                    <span class="testimonial-dot" data-index="1"></span>
+                    <span class="testimonial-dot" data-index="2"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-us">
+        <div class="container">
+            <h2 class="section-title">为什么选择我们</h2>
+            
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <img src="resource/icon1.png" alt="导师阵容">
+                    </div>
+                    <h3>顶尖导师阵容</h3>
+                    <p>与全球知名高校科研导师一对一合作，获得专业指导与推荐信支持</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <img src="resource/icon2.png" alt="录取成果">
+                    </div>
+                    <h3>优异录取成果</h3>
+                    <p>藤校申请录取率高达20%，远超社会面平均水平</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <img src="resource/icon3.png" alt="论文指导">
+                    </div>
+                    <h3>专业论文指导</h3>
+                    <p>论文发表率达80%，提供细致的投递指引与发表支持</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <img src="resource/icon4.png" alt="个性化辅导">
+                    </div>
+                    <h3>个性化辅导</h3>
+                    <p>提供10次导师研究辅导、4次写作指导及2次论文投递辅导</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" id="contact">
+        <h2>准备好踏上你的专属活动规划之旅了吗？</h2>
+        <button class="cta-button" onclick="window.location.href='mailto:support@xplorify.ai'">联系我们</button>
+        <div class="contact-info">
+            <p><a href="mailto:support@xplorify.ai" class="email-link"><strong>Email: support@xplorify.ai</strong></a></p>
+            <p>微信</p>
+            <img src="resource/wechat.png" alt="WeChat QR Code" class="wechat-qr">
+        </div>
+        <div class="copyright">
+            © 2025 Xplorify AI 智选优途 版权所有
+        </div>
+    </section>
+
+    <div id="imageModal" class="modal">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <a href="#top" class="back-to-top">↑</a>
+
+    <script>
+    window.onload = function() {
+        const track = document.querySelector('.poster-track');
+        const posters = document.querySelectorAll('.poster');
+        const prevButton = document.querySelector('.carousel-button.prev');
+        const nextButton = document.querySelector('.carousel-button.next');
+        let currentIndex = 0;
+
+        function getVisiblePosters() {
+            if (window.innerWidth > 1024) return 3;
+            if (window.innerWidth > 768) return 2;
+            return 1;
+        }
+
+        function updateCarousel() {
+            const visiblePosters = getVisiblePosters();
+            const maxIndex = posters.length - visiblePosters;
+            currentIndex = Math.min(currentIndex, maxIndex);
+            
+            const slideWidth = 100 / visiblePosters;
+            const offset = currentIndex * slideWidth;
+            track.style.transform = `translateX(-${offset}%)`;
+
+            // Update button states
+            prevButton.style.opacity = currentIndex === 0 ? '0.5' : '1';
+            prevButton.style.cursor = currentIndex === 0 ? 'not-allowed' : 'pointer';
+            nextButton.style.opacity = currentIndex === maxIndex ? '0.5' : '1';
+            nextButton.style.cursor = currentIndex === maxIndex ? 'not-allowed' : 'pointer';
+        }
+
+        nextButton.onclick = function() {
+            const visiblePosters = getVisiblePosters();
+            const maxIndex = posters.length - visiblePosters;
+            if (currentIndex < maxIndex) {
+                currentIndex++;
+                updateCarousel();
+            }
+        };
+
+        prevButton.onclick = function() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateCarousel();
+            }
+        };
+
+        // Handle window resize
+        let resizeTimer;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(updateCarousel, 250);
+        });
+
+        // Initial setup
+        updateCarousel();
+
+        // Testimonial Carousel
+        const testimonialTrack = document.querySelector('.testimonial-track');
+        const testimonials = document.querySelectorAll('.testimonial-card');
+        const testimonialDots = document.querySelectorAll('.testimonial-dot');
+        const testimonialPrevButton = document.querySelector('.testimonial-button.prev');
+        const testimonialNextButton = document.querySelector('.testimonial-button.next');
+        let testimonialIndex = 0;
+
+        function updateTestimonialCarousel() {
+            const slidePercentage = -testimonialIndex * 100;
+            testimonialTrack.style.transform = `translateX(${slidePercentage}%)`;
+            
+            testimonialDots.forEach((dot, index) => {
+                if (index === testimonialIndex) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+
+            testimonialPrevButton.style.opacity = testimonialIndex === 0 ? '0.5' : '1';
+            testimonialPrevButton.style.cursor = testimonialIndex === 0 ? 'not-allowed' : 'pointer';
+            testimonialNextButton.style.opacity = testimonialIndex === testimonials.length - 1 ? '0.5' : '1';
+            testimonialNextButton.style.cursor = testimonialIndex === testimonials.length - 1 ? 'not-allowed' : 'pointer';
+        }
+
+        testimonialNextButton.onclick = function() {
+            if (testimonialIndex < testimonials.length - 1) {
+                testimonialIndex++;
+                updateTestimonialCarousel();
+            }
+        };
+
+        testimonialPrevButton.onclick = function() {
+            if (testimonialIndex > 0) {
+                testimonialIndex--;
+                updateTestimonialCarousel();
+            }
+        };
+
+        testimonialDots.forEach((dot, index) => {
+            dot.onclick = function() {
+                testimonialIndex = index;
+                updateTestimonialCarousel();
+            };
+        });
+
+        // Initialize testimonial carousel
+        updateTestimonialCarousel();
+
+        // Modal functionality
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        const closeBtn = document.getElementsByClassName('modal-close')[0];
+        
+        // Add click event to all poster images
+        document.querySelectorAll('.poster img').forEach(img => {
+            img.onclick = function() {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+            }
+        });
+
+        // Close button functionality
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // Click outside image to close
+        modal.onclick = function(event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Close on escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && modal.style.display === "block") {
+                modal.style.display = "none";
+            }
+        });
+
+        // Add this to your existing script
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scroll for navigation links
+            document.querySelectorAll('.nav-links a').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+
+        // Add back to top button functionality
+        window.onscroll = function() {
+            var backToTopButton = document.querySelector('.back-to-top');
+            if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        };
+
+        // Smooth scroll to top
+        document.querySelector('.back-to-top').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    };
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get all necessary elements
+        const track = document.querySelector('.testimonial-track');
+        const slides = document.querySelectorAll('.testimonial-card');
+        const nextButton = document.querySelector('.testimonial-button.next');
+        const prevButton = document.querySelector('.testimonial-button.prev');
+        const dotsContainer = document.querySelector('.testimonial-dots');
+        const dots = document.querySelectorAll('.testimonial-dot');
+        
+        let currentSlide = 0;
+        const slideCount = slides.length;
+
+        // Function to move to a specific slide
+        function goToSlide(index) {
+            if (index < 0 || index >= slideCount) return;
+            currentSlide = index;
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Update dots
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentSlide);
+            });
+            
+            // Update button states
+            prevButton.disabled = currentSlide === 0;
+            nextButton.disabled = currentSlide === slideCount - 1;
+        }
+
+        // Add click handlers
+        nextButton.addEventListener('click', function() {
+            console.log('Next clicked'); // Debug log
+            goToSlide(currentSlide + 1);
+        });
+
+        prevButton.addEventListener('click', function() {
+            console.log('Prev clicked'); // Debug log
+            goToSlide(currentSlide - 1);
+        });
+
+        // Add dot click handlers
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => goToSlide(index));
+        });
+
+        // Initialize the carousel
+        goToSlide(0);
+    });
+    </script>
+
+</body>
+</html> 
