@@ -791,6 +791,15 @@
             .nav-logo {
                 margin-bottom: 10px;
                 font-size: 1.2rem;
+                text-align: center;
+                flex-direction: column; /* Make children stack vertically */
+                align-items: center;
+            }
+
+            .nav-logo span {
+                display: block; /* Force the span to start on a new line */
+                margin-top: 5px; /* Add some space above the span */
+                font-size: 0.9rem; /* Slightly smaller font for better mobile display */
             }
 
             .nav-links {
@@ -959,7 +968,7 @@
     <nav class="nav-bar">
         <div class="nav-container">
             <div class="nav-logo">
-                <img src="resource/logo.jpg" alt="Xplorify AI Logo"><span>&nbsp;用AI驱动的个性化定制，探索你的独特升学之路！</span>
+                <img src="resource/logo.jpg" alt="Xplorify AI Logo"><span>&nbsp;&nbsp;用AI驱动的个性化定制，探索你的独特升学之路！</span>
             </div>
             <div class="nav-links">
                 <a href="#top">首页</a>
