@@ -77,7 +77,7 @@
             background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('resource/banner.jpg');
             background-size: cover;
             background-position: center;
-            height: 50vh; /* Reduced from 60vh */
+            height: 25vh; /* Reduced from 60vh */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -398,9 +398,23 @@
 
         .section-title {
             text-align: center;
-            margin-bottom: 50px;
-            font-size: 2.5rem;
-            color: #333;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+            color: #0052cc;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: #0052cc;
+            border-radius: 2px;
         }
 
         .features-grid {
@@ -574,6 +588,13 @@
             
             .section-title {
                 font-size: 2em;
+                margin-bottom: 30px;
+                padding-bottom: 12px;
+            }
+            
+            .section-title:after {
+                width: 60px;
+                height: 2px;
             }
         }
 
@@ -972,7 +993,6 @@
             </div>
             <div class="nav-links">
                 <a href="#top">首页</a>
-                <a href="#programs">申请活动</a>
                 <a href="#contact">联系我们</a>
                 <a href="index.html" class="lang-switch">English</a>
             </div>
@@ -987,10 +1007,6 @@
                 <h3>一站式升学活动解决方案</h3>
                 <p>从个人创新项目到前沿科研探索，再到公益实践行动，Xplorify Learning Solutions 提供全方位支持，打造兼具深度与广度的活动发展路径。结合学术、实践、成果与社会影响力，为你的大学申请增添独特价值。</p>
             </div>
-            <div class="feature-block">
-                <h3>AI驱动的个性化规划</h3>
-                <p>通过AI技术智能匹配兴趣与潜力，量身定制专属活动方案。我们助力每位学生充分彰显个性与优势，打造令人瞩目的大学申请材料，让梦想更近一步！</p>
-            </div>
         </div>
     </section>
 
@@ -1002,13 +1018,11 @@
             <div class="field-category">
                 <h3>生物医学 Biology & Medicine</h3>
                 <ul>
-                    <li><strong>基因与蛋白质交互在精准肿瘤治疗中的应用</strong>：解析基因与蛋白交互，优化癌症精准诊断与靶向治疗</li>
-                    <li><strong>人工智能赋能病理图像与新药研发</strong>：AI应用于病理图像分析与药物分子筛选，加速新药研发</li>
-                    <li><strong>神经退行性疾病研究</strong>：研究阿尔茨海默症与帕金森症的病理机制与创新疗法</li>
-                    <li><strong>医疗手术机器人研发与临床应用</strong>：开发微创手术机器人，提高精准度与手术安全性</li>
-                    <li><strong>多功能分子诊断平台的研发</strong>：探索分子诊断技术在遗传病及癌症中的应用</li>
-                    <li><strong>用可穿戴设备辅助心血管疾病诊断</strong>：研究可穿戴设备监测数据在心血管疾病中的诊断应用</li>
-                    <li><strong>营养基因组学与个性化健康管理</strong>：研究营养与基因互作机制，制定个性化饮食干预方案，助力慢性疾病预防与健康管理</li>
+                    <li><strong>基因与蛋白质交互在精准肿瘤治疗中的应用</strong></li>
+                    <li><strong>人工智能赋能病理图像与新药研发</strong></li>
+                    <li><strong>医疗手术机器人研发与临床应用</strong></li>
+                    <li><strong>用可穿戴设备辅助心血管疾病诊断</strong>/li>
+                    <li><strong>营养基因组学与个性化健康管理</strong></li>
                 </ul>
             </div>
         
@@ -1016,12 +1030,10 @@
             <div class="field-category">
                 <h3>艺术与公益 Art & Social Impact</h3>
                 <ul>
-                    <li><strong>数字艺术与新媒体创作</strong>：利用数字技术与AI进行艺术表达，推广公益艺术教育，赋能数字创作新手</li>
-                    <li><strong>艺术史与当代艺术研究</strong>：探索传统与现代艺术的对话，通过公益项目加深公众对艺术文化的认知</li>
-                    <li><strong>交互设计与用户体验</strong>：设计公益数字平台，提升用户体验，激发更多人参与公益活动的积极性</li>
-                    <li><strong>艺术策展与展览管理</strong>：策划公益主题展览，运用艺术讲述社会故事，增强公众对重要议题的关注</li>
-                    <li><strong>天文数据可视化、声化与3D触摸展览</strong>：将复杂的天文数据转化为可看、可听、可触摸的形式，打造科学与艺术交融的公益体验</li>
-                    <li><strong>动漫设计</strong>：创作以公益为主题的动漫作品，用生动的内容吸引年轻人关注社会热点议题</li>
+                    <li><strong>数字艺术与新媒体创作</strong></li>
+                    <li><strong>交互设计与用户体验</strong></li>
+                    <li><strong>天文数据可视化、声化与3D触摸展览</strong></li>
+                    <li><strong>动漫设计</strong></li>
                 </ul>
             </div>
 
@@ -1029,12 +1041,10 @@
             <div class="field-category">
                 <h3>计算机科学 Computer Science</h3>
                 <ul>
-                    <li><strong>AR/VR 3D虚拟动画模型应用</strong>：研究AR/VR技术在3D动画建模、实时交互及沉浸式体验中的实际应用</li>
-                    <li><strong>AIGC下一代知识引擎的开发</strong>：开发AI生成内容（AIGC）的知识检索与生成引擎，提升内容生成效率与精准性</li>
-                    <li><strong>基于AI算法的自动驾驶应用研究</strong>：探索AI在环境感知、路径规划与车辆控制中的关键技术及应用</li>
-                    <li><strong>数学建模及场景化实践</strong>：利用数学建模解决交通优化、金融分析等真实场景中的复杂问题</li>
-                    <li><strong>人工智能神经网络模型的构建探究</strong>：构建并优化深度神经网络，研究其在图像识别与自然语言处理中的性能提升</li>
-                    <li><strong>加密货币与区块链技术研究</strong>：研究区块链技术在加密货币交易安全、智能合约和去中心化应用中的实际案例与潜力</li>
+                    <li><strong>AR/VR 3D虚拟动画模型应用</strong></li>
+                    <li><strong>下一代知识引擎的开发</strong></li>
+                    <li><strong>人工智能神经网络模型的构建探究</strong></li>
+                    <li><strong>加密货币与区块链技术研究</strong></li>
                 </ul>
             </div>
 
@@ -1042,23 +1052,20 @@
             <div class="field-category">
                 <h3>物理 Physics</h3>
                 <ul>
-                    <li><strong>天文学与宇宙学</strong>：研究地外行星、暗物质、黑洞及引力波，掌握数据分析与宇宙学方法</li>
-                    <li><strong>新能源与热力学</strong>：探索电池材料优化及太阳能、风能等新能源的高效储能与利用</li>
-                    <li><strong>量子物理与计算</strong>：研究量子纠缠、量子位操控及量子计算机核心原理与应用前景</li>
-                    <li><strong>声学与数据可视化</strong>：开发数据声化工具，为残障人士设计友好化的物理研究与展示方法</li>
-                    <li><strong>力学与材料科学</strong>：探究材料力学特性及其在工程、航空等领域的实际应用</li>
+                    <li><strong>天文学与宇宙学</strong></li>
+                    <li><strong>量子物理与计算</strong></li>
+                    <li><strong>声学与数据可视化</strong></li>
+                    <li><strong>力学与材料科学</strong></li>
                 </ul>
             </div>
 
             <!-- Startup -->
             <div class="field-category">
-                <h3>创业 Startup</h3>
+                <h3>商业 Business</h3>
                 <ul>
-                    <li><strong>商业模式创新与市场策略</strong>：通过市场调研与计划书制定，探索创新商业模式</li>
-                    <li><strong>数字经济与电子商务</strong>：结合用户设计与产品迭代，挖掘数字经济机会</li>
-                    <li><strong>社会企业与可持续发展</strong>：学习商业计划和融资，成立社会企业或NGO</li>
-                    <li><strong>市场测试与分析</strong>：验证创业想法，通过数据分析优化市场策略</li>
-                    <li><strong>用户体验与市场结合</strong>：优化用户体验设计，提升产品市场竞争力</li>
+                    <li><strong>商业模式创新与市场策略</strong></li>
+                    <li><strong>市场测试与分析</strong></li>
+                    <li><strong>用户体验与市场结合</strong></li>
                 </ul>
             </div>
 
@@ -1087,15 +1094,6 @@
                     <div class="mentor-info">
                         <h3>Dr. Wu</h3>
                         <p class="mentor-title">Tufts University 生物医学领域博士后, 师从分子诊断和超灵敏检测领域的全球领军教授</p>
-                        <div class="mentor-specialties">
-                            <span>研究方向：</span>
-                            <ul>
-                                <li>疾病诊断与IVD（分子体外诊断）技术</li>
-                                <li>细胞与分子生物学实验技术</li>
-                                <li>蛋白质与核酸研究</li>
-                                <li>先进光学和统计分析方法</li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
 
@@ -1107,15 +1105,6 @@
                     <div class="mentor-info">
                         <h3>Vivian</h3>
                         <p class="mentor-title">8年英美名校申请规划资深顾问，Georgia Tech数据分析硕士，多次参与初创企业项目管理与发展。</p>
-                        <div class="mentor-specialties">
-                            <span>擅长领域：</span>
-                            <ul>
-                                <li>创业与融资管理</li>
-                                <li>教育技术创新与产品开发</li>
-                                <li>教育领域职业发展与升学指导</li>
-                                <li>顶尖高校申请规划与教育咨询</li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
 
@@ -1129,15 +1118,6 @@
                         <p class="mentor-title">Ohio State University 天体物理学教授, Caltech和Yale University 博士后,
                             发表35+顶级期刊学术论文, 7000+引用
                             </p>
-                        <div class="mentor-specialties">
-                            <span>研究方向：</span>
-                            <ul>
-                                <li>系外行星的探测与表征</li>
-                                <li>高分辨成像与光谱学</li>
-                                <li>多恒星系统中的行星形成与宜居性</li>
-                                <li>行星形成与演化过程的观测与模拟</li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
 
@@ -1150,15 +1130,6 @@
                     <div class="mentor-info">
                         <h3>Dr. Chen</h3>
                         <p class="mentor-title">14年工业界经验资深AI专家，University of Florida 人工智能博士, 曾任多家硅谷顶尖科技公司AI部门负责人</p>
-                        <div class="mentor-specialties">
-                            <span>研究方向：</span>
-                            <ul>
-                                <li>大模型驱动的推荐系统优化与实践</li>
-                                <li>风控模型构建与实践</li>
-                                <li>人工智能在医疗领域的创新</li>
-                                <li>计算机视觉技术的前沿应用</li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
 
@@ -1169,15 +1140,6 @@
                     <div class="mentor-info">
                         <h3>Kelly</h3>
                         <p class="mentor-title">Harvard University 教育学硕士，心理学本科，专注于个性化教育与全面发展</p>
-                        <div class="mentor-specialties">
-                            <span>擅长领域：</span>
-                            <ul>
-                                <li>藤校升学规划与留学咨询</li>
-                                <li>课程设计与学生激励</li>
-                                <li>批判性思维与软技能培养</li>
-                                <li>个性化教育与全面发展</li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
 
@@ -1188,175 +1150,16 @@
                     <div class="mentor-info">
                         <h3>Song</h3>
                         <p class="mentor-title">纽约大学计算机工程与数学学士，丰富的留学与辅导经验</p>
-                        <div class="mentor-specialties">
-                            <span>擅长领域：</span>
-                            <ul>
-                                <li>北美7年留学经验，托福118分</li>
-                                <li>英语辅导与美本申请规划专家</li>
-                                <li>曾任国内知名机构托福雅思主讲老师</li>
-                                <li>辅导50+学生，快速提升综合英语能力</li>
-                                <li>帮助20+学生进入康奈尔等常春藤名校</li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
+            </div>
+            <!-- Add More link -->
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="#contact" style="display: inline-block; padding: 12px 30px; background-color: #0052cc; color: white; text-decoration: none; border-radius: 5px; font-size: 1.1rem; transition: background-color 0.3s ease;">更多导师</a>
             </div>
         </div>
     </section>
 
-    <section class="programs-table" id="programs">
-        <div class="container">
-            <h2 class="section-title">正在开放报名的重点项目</h2>
-            <div class="table-responsive">
-                <table class="program-table">
-                    <thead>
-                        <tr>
-                            <th>项目名称<br>Program Name</th>
-                            <th>研究方向<br>Research Area</th>
-                            <th>项目时长<br>Duration</th>
-                            <th>项目特色<br>Features</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>基因测序在癌症医疗领域的应用<br>
-                                导师：Dr. Wu<br>
-                                (Tufts University 生物医学博士后)</td>
-                            <td>• 分子生物学与基因测序<br>
-                                • 分子诊断技术<br>
-                                • Python数据分析<br>
-                                • AI科普应用开发</td>
-                            <td>• 总计50+1课时<br>
-                                • 8个Session<br>
-                                • 最长1年<br>
-                                • 每周2-3小时</td>
-                            <td>• 科研+NGO双落地<br>
-                                • 个性化项目内容<br>
-                                • 真实科研体验<br>
-                                • 小组规模≤5人<br>
-                                • 三大申请素材：<br>
-                                &nbsp;&nbsp;- 个人项目/网站<br>
-                                &nbsp;&nbsp;- 科研发表<br>
-                                &nbsp;&nbsp;- 创业/公益影响力</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>天体物理与计算机交叉学科项目<br>
-                                导师：Prof. Wang<br>
-                                (Ohio State University 天体物理学教授)</td>
-                            <td>• 天体物理学<br>
-                                • 计算机科学<br>
-                                • 数据可视化<br>
-                                • 科学传播与公益</td>
-                            <td>• 总计35课时<br>
-                                • 4个Session<br>
-                                • 为期1年<br>
-                                • 每周2-3小时</td>
-                            <td>• 跨学科创新项目<br>
-                                • 科研与公益结合<br>
-                                • 小组规模≤4人<br>
-                                • 多重师资配置：<br>
-                                &nbsp;&nbsp;- 专业领域导师<br>
-                                &nbsp;&nbsp;- 双领域助教<br>
-                                &nbsp;&nbsp;- 课程班主任<br>
-                                • 公益服务支持</td>
-                        </tr>
-                        
-                        <!-- Third Program (new) -->
-                        <tr>
-                            <td>硅谷创业营：AI产品从0到1<br>
-                                导师：Dr. Chen<br>
-                                (佛罗里达大学人工智能博士)</td>
-                            <td>• 商业模式与融资<br>
-                                • AI产品开发<br>
-                                • Fine-Tune模型开发<br>
-                                • Azure平台应用<br>
-                                • Prompt Engineering</td>
-                            <td>• 总计15+1课时<br>
-                                • 4个Session<br>
-                                • 为期3个月<br>
-                                • 每周2-3小时</td>
-                            <td>• 真实创业与研发体验<br>
-                                • 商业X产品X技术交叉<br>
-                                • 小组规模≤5人<br>
-                                • 项目亮点：<br>
-                                &nbsp;&nbsp;- MVP产品落地<br>
-                                &nbsp;&nbsp;- 商业计划书<br>
-                                &nbsp;&nbsp;- 技术开发实践</td>
-                        </tr>
-
-                        <!-- Fourth Program (new) -->
-                        <tr>
-                            <td>动漫书创作营<br>
-                                导师：冥冥 & 嘟噜<br>
-                                (小红书知名漫画创作者)</td>
-                            <td>• 漫画创作与视觉叙事<br>
-                                • 角色与场景设计<br>
-                                • AI辅助故事创作<br>
-                                • 出版与展览策划<br>
-                                • 媒体宣传推广</td>
-                            <td>• 总计35课时<br>
-                                • 学期内每周1小时<br>
-                                • 暑期强化课程<br>
-                                • 每周约2小时</td>
-                            <td>• 全方位创作体验<br>
-                                • 专业导师指导<br>
-                                • 小组规模≤3人<br>
-                                • 项目亮点：<br>
-                                &nbsp;&nbsp;- 完整漫画作品<br>
-                                &nbsp;&nbsp;- 展览策划执行<br>
-                                &nbsp;&nbsp;- 出版推广机会</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
-
-    <section class="testimonial-section">
-        <div class="testimonial-container">
-            <h2 class="section-title">学生成功案例</h2>
-            <div class="testimonial-carousel">
-                <button class="testimonial-button prev">❮</button>
-                <button class="testimonial-button next">❯</button>
-                
-                <div class="testimonial-track">
-                    <!-- Testimonial 1 -->
-                    <div class="testimonial-card">
-                        <div class="testimonial-content">
-                            <p class="quote">"通过Xplorify的科研项目，我成功发表了我的第一篇论文，并被斯坦福大学录取。"</p>
-                            <p class="author"><strong>- Emily Chen, 2024届</strong></p>
-                            <p class="school">录取院校：斯坦福大学</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Testimonial 2 -->
-                    <div class="testimonial-card">
-                        <div class="testimonial-content">
-                            <p class="quote">"导师的一对一指导让我深入理解了研究方法，这对我的大学申请帮助很大。"</p>
-                            <p class="author"><strong>- Jennifer Li, 2024届</strong></p>
-                            <p class="school">录取院校：麻省理工学院</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Testimonial 3 -->
-                    <div class="testimonial-card">
-                        <div class="testimonial-content">
-                            <p class="quote">"科研经历让我在申请中脱颖而出，成功获得了常春藤名校的录取。"</p>
-                            <p class="author"><strong>- Jack Wang, 2024届</strong></p>
-                            <p class="school">录取院校：宾夕法尼亚大学</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-dots">
-                    <span class="testimonial-dot active" data-index="0"></span>
-                    <span class="testimonial-dot" data-index="1"></span>
-                    <span class="testimonial-dot" data-index="2"></span>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Why Choose Us Section -->
     <section class="why-choose-us">
@@ -1405,11 +1208,11 @@
 
     <section class="cta-section" id="contact">
         <h2>准备好踏上你的专属活动规划之旅了吗？</h2>
-        <button class="cta-button" onclick="window.location.href='mailto:support@xplorify.ai'">联系我们</button>
+        <button class="cta-button" onclick="window.location.href='mailto:contact@xplorifylearningsolutions.com'">联系我们</button>
         <div class="contact-info">
-            <p><a href="mailto:help@xplorifylearningsolutions.com" class="email-link"><strong>Email: help@xplorifylearningsolutions.com</strong></a></p>
+            <p><a href="mailto:contact@xplorifylearningsolutions.com" class="email-link"><strong>Email: contact@xplorifylearningsolutions.com</strong></a></p>
             <p>微信</p>
-            <img src="resource/wechatv.png" alt="WeChat QR Code" class="wechat-qr">
+            <img src="resource/wechat.png" alt="WeChat QR Code" class="wechat-qr">
         </div>
         <div class="copyright">
             © 2025 Xplorify Inc. 优途智选 版权所有

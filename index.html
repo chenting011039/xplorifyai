@@ -77,7 +77,7 @@
             background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('resource/banner.jpg');
             background-size: cover;
             background-position: center;
-            height: 50vh; /* Reduced from 60vh */
+            height: 25vh; /* Reduced from 60vh */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -398,9 +398,23 @@
 
         .section-title {
             text-align: center;
-            margin-bottom: 50px;
-            font-size: 2.5rem;
-            color: #333;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+            color: #0052cc;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: #0052cc;
+            border-radius: 2px;
         }
 
         .features-grid {
@@ -574,6 +588,13 @@
             
             .section-title {
                 font-size: 2em;
+                margin-bottom: 30px;
+                padding-bottom: 12px;
+            }
+            
+            .section-title:after {
+                width: 60px;
+                height: 2px;
             }
         }
 
@@ -850,23 +871,6 @@
             }
         }
 
-        /* Research fields adjustments */
-        @media (max-width: 768px) {
-            .fields-container {
-                grid-template-columns: 1fr;
-                gap: 20px;
-                padding: 0 15px;
-            }
-
-            .field-category {
-                padding: 20px;
-            }
-
-            .field-category h3 {
-                font-size: 1.2em;
-            }
-        }
-
         /* Programs table adjustments */
         @media (max-width: 768px) {
             .program-table {
@@ -973,7 +977,6 @@
             </div>
             <div class="nav-links">
                 <a href="#top">Home</a>
-                <a href="#programs">Programs</a>
                 <a href="#contact">Contact</a>
                 <a href="index_zh.html" class="lang-switch">中文</a>
             </div>
@@ -988,28 +991,22 @@
                 <h3>One-Stop Solution for College Application Activities</h3>
                 <p>Xplorify Learning Solutions helps you build standout college application activities—from personal projects and research to public service. We blend academics, experience, achievements, and social impact to give your application a unique edge.</p>
             </div>
-            <div class="feature-block">
-                <h3>AI-Driven Personalized Activity Planning</h3>
-                <p>Leveraging AI to match your interests and potential, Xplorify creates customized activity plans that highlight your unique strengths. We help you craft standout college application materials that turn your goals into reality!</p>
-            </div>
         </div>
     </section>
 
     <section class="research-fields">
-        <h2 class="section-title">Research Fields</h2>
+        <h2 class="section-title">Projects</h2>
         
         <div class="fields-container">
             <!-- Biology & Medicine -->
             <div class="field-category">
                 <h3>Biology & Medicine</h3>
                 <ul>
-                    <li><strong>Gene-Protein Interactions in Precision Oncology</strong>: Investigating gene-protein dynamics to enhance cancer diagnostics and optimize targeted therapies.</li>
-                    <li><strong>AI-Enhanced Pathology and Drug Development</strong>: Utilizing artificial intelligence for pathological image analysis and high-throughput drug molecule screening.</li>
-                    <li><strong>Research on Neurodegenerative Diseases</strong>: Exploring the pathological mechanisms and novel therapeutic approaches for Alzheimer's and Parkinson's diseases.</li>
-                    <li><strong>Development of Medical Surgical Robots</strong>: Designing advanced minimally invasive surgical robots to enhance procedural precision and patient safety.</li>
-                    <li><strong>Innovations in Multi-functional Molecular Diagnostics</strong>: Advancing molecular diagnostic technologies for the detection of genetic disorders and cancers.</li>
-                    <li><strong>Wearable Technology for Cardiovascular Diagnostics</strong>: Investigating the application of wearable device data in the early detection and management of cardiovascular diseases.</li>
-                    <li><strong>Nutritional Genomics and Personalized Health Management</strong>: Examining gene-nutrition interactions to develop customized dietary strategies for chronic disease prevention and optimized health outcomes.</li>
+                    <li><strong>Gene-Protein Interactions in Precision Oncology</strong></li>
+                    <li><strong>AI-Enhanced Pathology and Drug Development</strong></li>
+                    <li><strong>Development of Medical Surgical Robots</strong></li>
+                    <li><strong>Wearable Technology for Cardiovascular Diagnostics</strong></li>
+                    <li><strong>Nutritional Genomics and Personalized Health Management</strong></li>
                 </ul>
             </div>
         
@@ -1017,12 +1014,10 @@
             <div class="field-category">
                 <h3>Art & Social Impact</h3>
                 <ul>
-                    <li><strong>Digital Art & New Media Creation</strong>: Leveraging digital technologies and AI for innovative artistic expression, advancing art education, and empowering digital creators.</li>
-                    <li><strong>Art History & Contemporary Art Research</strong>: Investigating the interplay between traditional and contemporary art through community-focused initiatives.</li>
-                    <li><strong>Interactive Design & User Experience</strong>: Developing digital platforms with a focus on user-centered design to enhance engagement in public benefit projects.</li>
-                    <li><strong>Art Curation & Exhibition Management</strong>: Curating thematic exhibitions that narrate social issues and foster public awareness.</li>
-                    <li><strong>Astronomical Data Visualization</strong>: Converting complex astronomical data into immersive visual, auditory, and tactile experiences for broader accessibility.</li>
-                    <li><strong>Animation Design</strong>: Producing socially-driven animations aimed at engaging and educating youth on critical societal topics.</li>
+                    <li><strong>Digital Art & New Media Creation</strong></li>
+                    <li><strong>Interactive Design & User Experience</strong></li>
+                    <li><strong>Astronomical Data Visualization</strong></li>
+                    <li><strong>Animation Design</strong></li>
                 </ul>
             </div>
 
@@ -1030,12 +1025,10 @@
             <div class="field-category">
                 <h3>Computer Science</h3>
                 <ul>
-                    <li><strong>AR/VR 3D Virtual Animation Models</strong>: Investigating applications of AR/VR technologies in 3D animation modeling, real-time interaction, and immersive virtual experiences.</li>
-                    <li><strong>AIGC Next-Generation Knowledge Engine</strong>: Developing AI-generated content engines for advanced knowledge retrieval and content creation, enhancing both efficiency and accuracy.</li>
-                    <li><strong>AI-Based Autonomous Driving Research</strong>: Exploring artificial intelligence applications in environmental sensing, path planning, and autonomous vehicle control systems.</li>
-                    <li><strong>Mathematical Modeling and Applications</strong>: Applying mathematical modeling techniques to address complex challenges in traffic flow optimization and financial analytics.</li>
-                    <li><strong>AI Neural Network Model Development</strong>: Designing and refining deep neural networks for advanced image recognition and natural language processing applications.</li>
-                    <li><strong>Cryptocurrency and Blockchain Technology</strong>: Analyzing blockchain technology's role in enhancing cryptocurrency trading security, smart contract development, and decentralized application ecosystems.</li>
+                    <li><strong>AR/VR 3D Virtual Animation Models</strong></li>
+                    <li><strong>Next-Generation Knowledge Engine</strong></li>
+                    <li><strong>AI Neural Network Model Development</strong></li>
+                    <li><strong>Cryptocurrency and Blockchain Technology</strong></li>
                 </ul>
             </div>
 
@@ -1043,23 +1036,20 @@
             <div class="field-category">
                 <h3>Physics</h3>
                 <ul>
-                    <li><strong>Astronomy and Cosmology</strong>: Conducting research on exoplanets, dark matter, black holes, and gravitational waves, with a focus on advanced data analysis and cosmological methodologies.</li>
-                    <li><strong>New Energy and Thermodynamics</strong>: Investigating battery material optimization and the efficient storage and utilization of solar and wind energy.</li>
-                    <li><strong>Quantum Physics and Computing</strong>: Exploring quantum entanglement, qubit manipulation, and the foundational principles of quantum computing.</li>
-                    <li><strong>Acoustics and Data Visualization</strong>: Developing data sonification tools and creating accessible methods for physics research visualization and presentation.</li>
-                    <li><strong>Mechanics and Materials Science</strong>: Studying the mechanical properties of materials and their practical applications in engineering and aerospace industries.</li>
+                    <li><strong>Astronomy and Cosmology</strong></li>
+                    <li><strong>Quantum Physics and Computing</strong></li>
+                    <li><strong>Acoustics and Data Visualization</strong></li>
+                    <li><strong>Mechanics and Materials Science</strong></li>
                 </ul>
             </div>
 
             <!-- Startup -->
             <div class="field-category">
-                <h3>Startup</h3>
+                <h3>Business</h3>
                 <ul>
-                    <li><strong>Business Model Innovation</strong>: Investigating cutting-edge business models through comprehensive market research and strategic planning.</li>
-                    <li><strong>Digital Economy and E-commerce</strong>: Integrating user-centric design and iterative product development to identify opportunities within the digital economy.</li>
-                    <li><strong>Social Enterprise and Sustainability</strong>: Acquiring skills in business planning and financing to launch sustainable social enterprises or NGOs.</li>
-                    <li><strong>Market Testing and Analysis</strong>: Employing data-driven analysis to validate and refine startup concepts.</li>
-                    <li><strong>User Experience and Market Integration</strong>: Enhancing product competitiveness through optimized user experience design and strategic market alignment.</li>
+                    <li><strong>Business Model Innovation</strong></li>
+                    <li><strong>Market Testing and Analysis</strong></li>
+                    <li><strong>User Experience and Market Integration</strong></li>
                 </ul>
             </div>
 
@@ -1088,15 +1078,6 @@
                     <div class="mentor-info">
                         <h3>Dr. Wu</h3>
                         <p class="mentor-title">Postdoctoral Researcher at Tufts University, Mentored by a Globally Renowned Expert in Molecular Diagnostics and Ultra-Sensitive Detection Technologies</p>
-                        <div class="mentor-specialties">
-                            <span>Research Focus:</span>
-                            <ul>
-                                <li>Disease Diagnostics and In Vitro Diagnostic (IVD) Technologies</li>
-                                <li>Cellular and Molecular Biology Experimental Techniques</li>
-                                <li>Protein and Nucleic Acid Analysis</li>
-                                <li>Advanced Optical Methods and Statistical Analysis</li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
 
@@ -1108,15 +1089,6 @@
                     <div class="mentor-info">
                         <h3>Vivian</h3>
                         <p class="mentor-title">Senior College Application Consultant with 8 Years of Experience, Master's in Data Analysis from Georgia Tech, with Extensive Involvement in Early-Stage Enterprise Project Management and Development.</p>
-                        <div class="mentor-specialties">
-                            <span>Areas of Expertise:</span>
-                            <ul>
-                                <li>Entrepreneurship and Financial Management</li>
-                                <li>Innovation in Educational Technology and Product Development</li>
-                                <li>Career Development in Education and College Application Strategy</li>
-                                <li>Comprehensive Planning for Top University Applications and Educational Consulting</li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
 
@@ -1128,15 +1100,6 @@
                     <div class="mentor-info">
                         <h3>Prof. Wang</h3>
                         <p class="mentor-title">Professor of Astrophysics at Ohio State University, Former Postdoctoral Researcher at Caltech and Yale University, Author of 35+ Publications in Leading Journals with Over 7,000 Citations.</p>
-                        <div class="mentor-specialties">
-                            <span>Research Focus:</span>
-                            <ul>
-                                <li>Detection and Characterization of Exoplanets</li>
-                                <li>High-Resolution Imaging and Spectroscopic Techniques</li>
-                                <li>Planetary Formation and Habitability in Multi-Star Systems</li>
-                                <li>Observational and Simulated Studies of Planetary Formation and Evolution</li>
-                            </ul>
-                        </div>                        
                     </div>
                 </div>
 
@@ -1149,15 +1112,6 @@
                     <div class="mentor-info">
                         <h3>Dr. Chen</h3>
                         <p class="mentor-title">AI Expert with 14 Years of Industry Experience, Ph.D. from the University of Florida, Former Head of AI Departments at Several Leading Silicon Valley Tech Companies.</p>
-                        <div class="mentor-specialties">
-                            <span>Research Focus:</span>
-                            <ul>
-                                <li>Personalization Strategies for Large-Scale Recommendation Systems</li>
-                                <li>Risk Management in Consumer-Facing High-Tech Products</li>
-                                <li>Innovative AI Applications in Healthcare </li>
-                                <li>Advanced Applications of Computer Vision Technologies</li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
 
@@ -1168,15 +1122,6 @@
                     <div class="mentor-info">
                         <h3>Kelly</h3>
                         <p class="mentor-title">Master's in Education from Harvard University, Bachelor's in Psychology, Specializing in Personalized Education and Holistic Student Development.</p>
-                        <div class="mentor-specialties">
-                            <span>Areas of Expertise:</span>
-                            <ul>
-                                <li>College Application Planning and International Education Consulting at Tulane University</li>
-                                <li>Curriculum Design and Student Engagement Strategies</li>
-                                <li>Critical Thinking Development and Soft Skills Training</li>
-                                <li>Personalized Learning Approaches and Holistic Student Growth</li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
 
@@ -1187,195 +1132,14 @@
                     <div class="mentor-info">
                         <h3>Song</h3>
                         <p class="mentor-title">B.S. in Computer Engineering and Mathematics from NYU, with extensive study abroad and tutoring experience.</p>
-                        <div class="mentor-specialties">
-                            <span>Areas of Expertise:</span>
-                            <ul>
-                                <li>7 Years of Study Abroad in the U.S. and Canada, TOEFL Score of 118</li>
-                                <li>Expert in English Tutoring and U.S. College Application Planning</li>
-                                <li>Former TOEFL/IELTS Instructor at Renowned English Institutions in China</li>
-                                <li>Guided 50+ Students to Rampic Language Skill Improvement</li>
-                                <li>Helped 20+ Students Gain Admission to Top Schools, such as Cornell</li>
-                            </ul>
-                        </div>
                     </div>
+                </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <section class="programs-table" id="programs">
-        <div class="container">
-            <h2 class="section-title">Get Started with Our Summer 2025 Programs</h2>
-            <div class="table-responsive">
-                <table class="program-table">
-                    <thead>
-                        <tr>
-                            <th>Program Name</th>
-                            <th>Research Area</th>
-                            <th>Duration</th>
-                            <th>Features</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Gene Sequencing in Cancer Medicine<br>
-                                Mentor: Dr. Wu<br>
-                                (Tufts University Postdoctoral Researcher)</td>
-                            <td>
-                                • Molecular Biology & Gene Sequencing<br>
-                                • Molecular Diagnostics Techniques<br>
-                                • Python for Data Analysis<br>
-                                • AI in Scientific Communication
-                            </td>
-                            <td>
-                                • Total Duration: 50+1 Hours<br>
-                                • 8 Sessions<br>
-                                • Program Length: Up to 1 Year<br>
-                                • Weekly Commitment: 2-3 Hours
-                            </td>
-                            <td>
-                                • Research with NGO Collaboration<br>
-                                • Customized Learning Content<br>
-                                • Hands-On Research Experience<br>
-                                • Small Group (≤5 Participants)<br>
-                                • Three Application Deliverables:<br>
-                                &nbsp;&nbsp;- Personal Project/Website<br>
-                                &nbsp;&nbsp;- Research Publication<br>
-                                &nbsp;&nbsp;- Startup/Social Impact Initiative
-                            </td>                            
-                        </tr>
-                        
-                        <tr>
-                            <td>Astrophysics & Computer Science Interdisciplinary Project<br>
-                                Mentor: Prof. Wang<br>
-                                (Ohio State University Professor of Astrophysics)</td>
-                            <td>
-                                • Astrophysics<br>
-                                • Computer Science Applications<br>
-                                • Data Visualization Techniques<br>
-                                • Scientific Communication
-                            </td>
-                            <td>
-                                • Total Duration: 35 Hours<br>
-                                • 4 Comprehensive Sessions<br>
-                                • Program Length: 1 Year<br>
-                                • Weekly Commitment: 2-3 Hours
-                            </td>
-                            <td>
-                                • Interdisciplinary Research & Innovation<br>
-                                • Research Integration with Social Impact<br>
-                                • Small Group (≤4 Participants)<br>
-                                • Comprehensive Coaching Framework::<br>
-                                &nbsp;&nbsp;- Expert in the field<br>
-                                &nbsp;&nbsp;- Interdisciplinary Teaching Assistants<br>
-                                &nbsp;&nbsp;- Dedicated Course Advisor
-                            </td>
-                            
-                        </tr>
-                        
-                        <tr>
-                            <td>Silicon Valley Startup: AI Product from 0 to 1<br>
-                                Mentor: Dr. Chen<br>
-                                (University of Florida Machine Learning Ph.D.)</td>
-                            <td>
-                                • Business Model Innovation & Funding Strategies<br>
-                                • AI Product Development Lifecycle<br>
-                                • Fine-Tuning AI Models<br>
-                                • Applications on the Azure Platform<br>
-                                • Prompt Engineering Techniques
-                            </td>
-                            <td>
-                                • Total Duration: 15+1 Hours<br>
-                                • 4 Interactive Sessions<br>
-                                • Program Length: 3 Months<br>
-                                • Weekly Commitment: 2-3 Hours
-                            </td>
-                            <td>
-                                • Hands-On Startup Experience<br>
-                                • Integrated Focus: Business, Product, and Technology<br>
-                                • Small Group (≤5 Participants)<br>
-                                • Key Project Deliverables:<br>
-                                &nbsp;&nbsp;- MVP (Minimum Viable Product) Launch<br>
-                                &nbsp;&nbsp;- Comprehensive Business Plan<br>
-                                &nbsp;&nbsp;- Technical Development Implementation
-                            </td>                            
-                        </tr>
-
-                        <tr>
-                            <td>Comic Book Creation Camp<br>
-                                Mentors: Ming Ming & Dulu<br>
-                                (Popular Comic Artists on Social Media)</td>
-                            <td>
-                                • Comic Creation & Visual Storytelling<br>
-                                • Character Development & Scene Design<br>
-                                • AI-Assisted Storytelling Techniques<br>
-                                • Publication & Exhibition Planning<br>
-                                • Media Strategy & Promotion
-                            </td>
-                            <td>
-                                • Total Duration: 35 Hours<br>
-                                • Weekly 1-Hour Sessions<br>
-                                • Summer Intensive Program<br>
-                                • Approx. 2 Hours/Week Commitment
-                            </td>
-                            <td>
-                                • End-to-End Comic Creation Experience<br>
-                                • Mentorship from Industry Professionals<br>
-                                • Small Group (≤3 Participants)<br>
-                                • Key Project Deliverables:<br>
-                                &nbsp;&nbsp;- Completed Comic Book<br>
-                                &nbsp;&nbsp;- Exhibition Planning & Display<br>
-                                &nbsp;&nbsp;- Publication and Media Exposure Opportunities
-                            </td>         
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
-
-    <section class="testimonial-section">
-        <div class="testimonial-container">
-            <h2 class="section-title">Student Success Stories</h2>
-            <div class="testimonial-carousel">
-                <button class="testimonial-button prev">❮</button>
-                <button class="testimonial-button next">❯</button>
-                
-                <div class="testimonial-track">
-                    <!-- Testimonial 1 -->
-                    <div class="testimonial-card">
-                        <div class="testimonial-content">
-                            <p class="quote">"Through Xplorify's research program, I successfully published my first paper and was admitted to Stanford University."</p>
-                            <p class="author"><strong>- Emmy Chen, Class of 2024</strong></p>
-                            <p class="school">Admitted to: Stanford University</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Testimonial 2 -->
-                    <div class="testimonial-card">
-                        <div class="testimonial-content">
-                            <p class="quote">"The one-on-one guidance from the mentor helped me deeply understand the research method, which was very helpful for my college application."</p>
-                            <p class="author"><strong>- Jennifer Li, Class of 2024</strong></p>
-                            <p class="school">Admitted to: Massachusetts Institute of Technology</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Testimonial 3 -->
-                    <div class="testimonial-card">
-                        <div class="testimonial-content">
-                            <p class="quote">"The scientific research experience helped me stand out in the application and successfully obtained admission to a prestigious Ivy League university."</p>
-                            <p class="author"><strong>- Jack Wang, Class of 2024</strong></p>
-                            <p class="school">Admitted to: University of Pennsylvania</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-dots">
-                    <span class="testimonial-dot active" data-index="0"></span>
-                    <span class="testimonial-dot" data-index="1"></span>
-                    <span class="testimonial-dot" data-index="2"></span>
-                </div>
-            </div>
+        <!-- Add More link -->
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="#contact" style="display: inline-block; padding: 12px 30px; background-color: #0052cc; color: white; text-decoration: none; border-radius: 5px; font-size: 1.1rem; transition: background-color 0.3s ease;">More Mentors</a>
         </div>
     </section>
 
@@ -1426,11 +1190,11 @@
 
     <section class="cta-section" id="contact">
         <h2>Ready to Start Your Personalized Activity Journey?</h2>
-        <button class="cta-button" onclick="window.location.href='mailto:support@xplorify.ai'">Contact Us</button>
+        <button class="cta-button" onclick="window.location.href='mailto:contact@xplorifylearningsolutions.com'">Contact Us</button>
         <div class="contact-info">
-            <p><a href="mailto:help@xplorifylearningsolutions.com" class="email-link"><strong>Email: help@xplorifylearningsolutions.com</strong></a></p>
+            <p><a href="mailto:contact@xplorifylearningsolutions.com" class="email-link"><strong>Email: contact@xplorifylearningsolutions.com</strong></a></p>
             <p>WeChat</p>
-            <img src="resource/wechatv.png" alt="WeChat QR Code" class="wechat-qr">
+            <img src="resource/wechat.png" alt="WeChat QR Code" class="wechat-qr">
         </div>
         <div class="copyright">
             © 2025 Xplorify Inc. All Rights Reserved
